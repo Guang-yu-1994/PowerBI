@@ -1,0 +1,10 @@
+DateTable = ADDCOLUMNS(
+CALENDAR(date(2017,1,1),date(2030,12,31)),
+"Year",Year([Date]),
+"Month",MONTH([date]),
+"Week",weeknum([date]),
+"YearQuater",year([date])&"Q"&ROUNDUP(MONTH([Date])/3,0),
+"YearMonth",Year([date])*100 + MONTH([date]),
+"YearWeek",Year([date])*100 + weeknum([date]),
+"Day",WEEKDAY([date])
+)
